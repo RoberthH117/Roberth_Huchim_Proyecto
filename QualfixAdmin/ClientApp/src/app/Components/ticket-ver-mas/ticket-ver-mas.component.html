@@ -1,0 +1,16 @@
+<form (submit)="enviarTicket()">
+    <h2>Descripción: {{ tickets.length > 0 ? tickets[0].id : '' }}</h2>
+    <label for="estado">Estado:</label>
+    <select id="estado" [(ngModel)]="estado" name="estado">
+      <option value="pendiente">Pendiente</option>
+      <option value="completado">Completado</option>
+    </select>
+    <p>Fecha de Solicitud: {{ tickets.length > 0 ? tickets[0].fecha_Solicitud : '' }}</p>
+  
+    <h3>Imágenes:</h3>
+    <div *ngFor="let imagen of imagenes">
+      <img [src]="getBase64Image(imagen.ruta)" alt="Imagen del ticket" class="imagen-ticket">
+    </div>
+  
+    <button type="submit">Enviar</button>
+  </form>

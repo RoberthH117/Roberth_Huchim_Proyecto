@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-title class="card__title">
+    <fieldset>Lista de Clientes <img src="../../../assets/empresa.png" class="icon-agregar" alt="icon"></fieldset>
+  </mat-card-title>
+  <mat-card-header>
+    <button mat-raised-button class="btn-agregar" (click)="agregarCliente()">   <mat-icon>add_circle</mat-icon>   Agregar Cliente </button>
+  </mat-card-header>
+  <br>
+  <mat-card-content>
+    <table mat-table [dataSource]="clientes">
+      <!-- Columnas de la tabla -->
+      <ng-container matColumnDef="correoElectronico" >
+        <th mat-header-cell *matHeaderCellDef class="titulo-table"> Email </th>
+        <td mat-cell *matCellDef="let cliente"> {{ cliente.correoElectronico }} </td>
+      </ng-container>
+      <ng-container matColumnDef="telefonos">
+        <th mat-header-cell *matHeaderCellDef>Telefonos</th>
+        <td mat-cell *matCellDef="let cliente"> {{ cliente.telefonos }} </td>
+      </ng-container>
+      <ng-container matColumnDef="nombreComercial">
+        <th mat-header-cell *matHeaderCellDef> Nombre Comercial </th>
+        <td mat-cell *matCellDef="let cliente"> {{ cliente.nombreComercial }} </td>
+      </ng-container>
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let cliente">
+          <!-- Botones de Acciones -->
+          <button mat-flat-button   (click)="verDetalles(cliente.clienteId)" class="btn-action">
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button mat-flat-button   (click)="editarCliente(cliente.clienteId, cliente.informacionFiscalId)"class="btn-action btn-edit">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-flat-button color="warn" (click)="eliminarCliente(cliente.clienteId,cliente.nombreComercial)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="[ 'nombreComercial', 'telefonos','correoElectronico','acciones']"></tr>
+      <tr mat-row *matRowDef="let row; columns: [ 'nombreComercial','telefonos','correoElectronico', 'acciones'];"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,238 @@
+<div class="content">
+    <div class="header-card">
+
+
+        <img src="../../../assets/cells.png" class="icon" alt="">
+        <mat-card-title>MODIFICAR INFORMACIÓN DE CLIENTE</mat-card-title>
+
+    </div>
+    <!-- <p>modal-reg-cliente works!</p>
+    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+      </button> -->
+    <mat-stepper [linear]="isLinear" #stepper>
+
+        <mat-step [stepControl]="formInformacionFiscal" label="Información Fiscal" class="titulo-form custom-step">
+            <form [formGroup]="formInformacionFiscal">
+
+                <!-- Razon Social -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Razon Social</mat-label>
+                    <input matInput placeholder="Razon Social" formControlName="razonSocial" required>
+                </mat-form-field>
+
+                <!-- RFC -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>RFC</mat-label>
+                    <input matInput placeholder="RFC" formControlName="rfc" required>
+                </mat-form-field>
+
+                <!-- Dirección -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Dirección</mat-label>
+                    <input matInput placeholder="Dirección" formControlName="direccion" required>
+                </mat-form-field>
+
+                <!-- Código Postal (CP) -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Código Postal (CP)</mat-label>
+                    <input matInput placeholder="Código Postal" formControlName="cp" required>
+                </mat-form-field>
+
+
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Ciudad</mat-label>
+                    <mat-select formControlName="ciudadId" placeholder="Cliente">
+                        <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.ciudadId">{{ ciudad.nombre
+                            }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="estadoId" placeholder="Cliente">
+                        <mat-option *ngFor="let estado of estados" [value]="estado.estadoId">{{ estado.nombre
+                            }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Pais</mat-label>
+                    <mat-select formControlName="paisId" placeholder="Cliente">
+                        <mat-option *ngFor="let pais of paises" [value]="pais.paisId">{{ pais.nombre }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <!-- Número Interior -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Número Interior</mat-label>
+                    <input matInput placeholder="Número Interior" formControlName="numeroInterior" required>
+                </mat-form-field>
+
+                <!-- Número Exterior -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Número Exterior</mat-label>
+                    <input matInput placeholder="Número Exterior" formControlName="numeroExterior" required>
+                </mat-form-field>
+
+                <!-- Colonia -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Colonia</mat-label>
+                    <input matInput placeholder="Colonia" formControlName="colonia" required>
+                </mat-form-field>
+
+                <!-- Localidad -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Localidad</mat-label>
+                    <input matInput placeholder="Localidad" formControlName="localidad" required>
+                </mat-form-field>
+
+                <!-- Referencia -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Referencia</mat-label>
+                    <input matInput placeholder="Referencia" formControlName="referencia" required>
+                </mat-form-field>
+
+                <!-- Municipio -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Municipio</mat-label>
+                    <input matInput placeholder="Municipio" formControlName="municipio" required>
+                </mat-form-field>
+
+
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Regimen Fiscal</mat-label>
+                    <mat-select formControlName="regFiscalId" placeholder="Regimen Fiscal">
+                        <mat-option *ngFor="let regimenfiscals of regimenfiscal"
+                            [value]="regimenfiscals.codeRegimenFiscal">{{
+                            regimenfiscals.descripcion }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <!-- <button mat-button matStepperPrevious>Back</button> -->
+                    <button mat-button matStepperNext (click)="EditarInformacionFiscal()" class="btn-registrar">Modificar
+                        Información Fiscal <img src="../../../assets/agregar-archivo.png" class="icon-btn"
+                            alt="icon"></button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="formcliente">
+            <form [formGroup]="formcliente">
+                <ng-template matStepLabel>Información de Cliente</ng-template>
+
+                <!-- Dirección -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Dirección</mat-label>
+                    <input matInput placeholder="Dirección" formControlName="direccion" required>
+                </mat-form-field>
+
+                <!-- Nombre Comercial -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Nombre Comercial</mat-label>
+                    <input matInput placeholder="Nombre Comercial" formControlName="nombreComercial" required>
+                </mat-form-field>
+
+                <!-- Código Postal (CP) -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Código Postal (CP)</mat-label>
+                    <input matInput placeholder="Código Postal" formControlName="cp" required>
+                </mat-form-field>
+
+                <!-- Teléfonos -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Teléfonos</mat-label>
+                    <input matInput placeholder="Teléfonos" formControlName="telefonos" required>
+                </mat-form-field>
+
+                <!-- Fax -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Fax</mat-label>
+                    <input matInput placeholder="Fax" formControlName="fax" required>
+                </mat-form-field>
+
+                <!-- Correo Electrónico -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Correo Electrónico</mat-label>
+                    <input matInput placeholder="Correo Electrónico" formControlName="correoElectronico" required>
+                </mat-form-field>
+
+
+
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Ciudad</mat-label>
+                    <mat-select formControlName="ciudadId" placeholder="Cliente">
+                        <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.ciudadId">{{ ciudad.nombre
+                            }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="estadoId" placeholder="Cliente">
+                        <mat-option *ngFor="let estado of estados" [value]="estado.estadoId">{{ estado.nombre
+                            }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Pais</mat-label>
+                    <mat-select formControlName="paisId" placeholder="Cliente">
+                        <mat-option *ngFor="let pais of paises" [value]="pais.paisId">{{ pais.nombre }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <!-- Calle -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Calle</mat-label>
+                    <input matInput placeholder="Calle" formControlName="calle" required>
+                </mat-form-field>
+
+                <!-- Número Exterior -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Número Exterior</mat-label>
+                    <input matInput placeholder="Número Exterior" formControlName="numeroExterior" required>
+                </mat-form-field>
+
+                <!-- Número Interior -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Número Interior</mat-label>
+                    <input matInput placeholder="Número Interior" formControlName="numeroInterior" required>
+                </mat-form-field>
+
+                <!-- Cruzamientos -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Cruzamientos</mat-label>
+                    <input matInput placeholder="Cruzamientos" formControlName="cruzamientos" required>
+                </mat-form-field>
+
+                <!-- Colonia -->
+                <mat-form-field class="col-md-4 mb-3" appearance="outline">
+                    <mat-label>Colonia</mat-label>
+                    <input matInput placeholder="Colonia" formControlName="colonia" required>
+                </mat-form-field>
+
+
+
+                <div>
+                    <button mat-button matStepperNext class="btn-registrar">Finalizar Registro <img
+                            src="../../../assets/agregar-archivo.png" class="icon-btn" alt="icon"></button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Finalizar Registro</ng-template>
+
+            <div class="content-info">
+                <img src="../../../assets/guardar-datos.png" alt="icono" class="icon-dos">
+                <h2>¿Esta seguro de Guardar la Información del Cliente?</h2>
+                <div>
+                    <button mat-raised-button matStepperPrevious color="warn">Cancelar</button>
+                    <button mat-raised-button (click)="EditarCliente()" class="btn-registrar">Confirmar Cambios</button>
+                </div>
+
+
+            </div>
+        </mat-step>
+    </mat-stepper>
+</div>

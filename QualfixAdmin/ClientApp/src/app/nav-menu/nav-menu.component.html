@@ -1,0 +1,101 @@
+<mat-toolbar>
+  <button class="btn-menu" mat-icon-button (click)="toggle()">
+   <mat-icon class="btn-menu">menu</mat-icon> 
+  </button>
+  <a class="navbar-brand" [routerLink]="['/']">
+    <img src="../../assets/Roberth-logo.svg" style="width:50px" alt="QualfixAdmin Logo" class="logo">
+  </a>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" [attr.role]="(isExpanded ? 'dialog' : 'navigation')"
+    [mode]="(isExpanded ? 'over' : 'side')" [opened]="isExpanded">
+    <mat-nav-list>
+      <a class="items" mat-list-item [routerLink]="['home']" routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon>home</mat-icon> Inicio
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/Rol']" *ngIf="ModuloRol" routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon>people</mat-icon> Roles
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/TipoLicencia']" *ngIf="ModuloTipoLicencia"
+        routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon>class</mat-icon> Licencias
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/perfil']" *ngIf="ModuloPerfil" routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon>folder_shared</mat-icon> Perfiles
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/asignar-licencia']" *ngIf="ModuloLicencia"
+        routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon>add_circle</mat-icon> Asignacion de Licencias
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/licencias']" *ngIf="ModuloHistorialLicencia"
+        routerLinkActive="link-active">
+        <p>
+          <mat-icon>folder_special</mat-icon> Licencias
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/configCFDI']" *ngIf="ModuloConfigCfdi"
+        routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon>build</mat-icon> Configuración de CFDI
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/modclientes']" *ngIf="ModuloClientes"
+        routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon> business</mat-icon> Clientes
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/productos']" *ngIf="ModuloProductos"
+        routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon>enhanced_encryption</mat-icon> Productos
+        </p>
+      </a>
+      <a class="items" mat-list-item [routerLink]="['/registrousuarios']" *ngIf="ModuloUsuarios"
+        routerLinkActive="link-active">
+        <p class="items">
+          <mat-icon>group_add</mat-icon> Usuarios
+        </p>
+      </a>
+      
+ 
+  <a class="items" mat-list-item [routerLink]="['/HistorialTicket']" *ngIf="ModuloTicketRegistro"
+  routerLinkActive="link-active">
+  <p class="items">
+    <mat-icon> list_alt</mat-icon> HistorialTicket
+  </p>
+</a>
+
+
+<a class="items" mat-list-item [routerLink]="['/UsuarioComprar']" *ngIf="ModuloComprarLicencia"
+routerLinkActive="link-active">
+<p class="items">
+  <mat-icon>add_shopping_cart</mat-icon>  Comprar Licencias
+</p>
+</a>
+
+      <a class="items btn-cerrar" mat-list-item [routerLink]="['/login']" (click)="cerrarSesion()">
+        <p class="items">
+
+          <mat-icon>keyboard_tab</mat-icon> Cerrar Sesión
+        </p>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content  class="contenderoHijo">
+  
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

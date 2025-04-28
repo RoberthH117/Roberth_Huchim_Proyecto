@@ -1,0 +1,32 @@
+.content{
+    width: 100%;
+    height: auto;
+    border: solid;
+    font-family:  'Poppins', sans-serif;
+}
+.header-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #e96300;
+    margin-bottom: 25px;
+    color: white;
+    
+}
+.icon{
+    width: 40px;
+    margin: 5px;
+}
+#crear{
+   background-color: #e96300;
+   color: #ffff;
+   fill: #ffffff;
+   margin-bottom: 20px;
+}
+#editar{
+ background-color: #e96300;
+}
+#borrar{
+    background-color: red;
+} 

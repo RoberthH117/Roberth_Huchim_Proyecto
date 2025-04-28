@@ -1,0 +1,147 @@
+<div class="content">
+  <mat-card>
+    <mat-card-title>Información del Cliente <img src="../../../assets/empresa.png" class="icon-agregar"
+        alt="icon"></mat-card-title>
+    <mat-tab-group animationDuration="1500ms">
+      <mat-tab label="Información del Cliente" class="custom-tab-label">
+
+        <mat-card-header>
+
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card class="content-info">
+            <mat-card-title>Datos de Cliente</mat-card-title>
+            <div>
+              <strong>Nombre Comercial:</strong> 
+             <p>{{ cliente.nombreComercial }}</p>
+            </div>
+            <div>
+              <strong>Correo Electrónico:</strong> 
+             <p> {{ cliente.correoElectronico }}</p>
+            </div>
+            <div>
+              <strong>Teléfonos:</strong> 
+             <p> {{ cliente.telefonos }} </p>
+            </div>
+          </mat-card>
+          <mat-card class="content-info">
+            <mat-card-title>Ubicación</mat-card-title>
+            <div>
+              <strong>Dirección:</strong> 
+              <p> {{ cliente.direccion }} </p>
+            </div>
+            <div>
+              <strong>Colonia:</strong> 
+              <p> {{ cliente.colonia }} </p>
+            </div>
+            <div>
+              <strong>Calle:</strong> 
+             <p> {{ cliente.calle }} </p>
+            </div>
+            <div>
+              <strong>Número Exterior:</strong>
+              <p> {{ cliente.numeroExterior }} </p>
+            </div>
+            <div>
+              <strong>Número Interior:</strong>
+              <p> {{ cliente.numeroInterior }} </p>
+            </div>
+            <div>
+              <strong>Código Postal:</strong> 
+             <p> {{ cliente.cp }} </p>
+            </div>
+            <div>
+              <strong>País:</strong>
+              <p> {{ cliente.pais?.nombre }} </p>
+            </div>
+            <div>
+              <strong>Estado:</strong> 
+             <p> {{ cliente.estado?.nombre }}</p>
+
+            </div>
+            <div>
+              <strong>Ciudad:</strong> 
+             <p> {{ cliente.ciudad?.nombre }} </p>
+            </div>
+          </mat-card>
+        </mat-card-content>
+
+
+      </mat-tab>
+      <mat-tab label="Información Fiscal">
+
+        <mat-card>
+          <mat-card-header>
+            
+          </mat-card-header>
+          <mat-card-content>
+            <mat-card class="content-info">
+              <mat-card-title>Datos Fiscales </mat-card-title>
+              <div>
+                <strong>Razón Social:</strong> 
+               <p> {{ informacionFiscal.razonSocial }} </p>
+              </div>
+              <div>
+                <strong>RFC:</strong>
+                <p> {{ informacionFiscal.rfc }} </p>
+              </div>
+              <div>
+                <strong>Regimen Fiscal:</strong>
+                <p> {{ informacionFiscal.regFiscal?.descripcion }} </p>
+              </div>
+            </mat-card>
+            <mat-card class="content-info">
+              <mat-card-title>Ubicación</mat-card-title>
+              <div>
+                <strong>Dirección:</strong> 
+               <p> {{ informacionFiscal.direccion }} </p>
+              </div>
+              <div>
+                <strong>Número Exterior:</strong> 
+               <p> {{ informacionFiscal.numeroExterior }} </p>
+              </div>
+              <div>
+                <strong>Número Interior:</strong>
+                <p> {{ informacionFiscal.numeroInterior }} </p>
+              </div>
+              <div>
+                <strong>Código Postal:</strong> 
+               <p> {{ informacionFiscal.cp }} </p>
+              </div>
+              <div>
+                <strong>Ciudad:</strong> 
+                <p>{{ informacionFiscal.ciudad?.nombre }} </p>
+              </div>
+              <div>
+                <strong>Estado:</strong>
+                <p> {{ informacionFiscal.estado?.nombre }} </p>
+              </div>
+              <div>
+                <strong>País:</strong>
+                <p> {{ informacionFiscal.pais?.nombre }} </p>
+              </div>
+              <div>
+                <strong>Colonia:</strong>
+                <p> {{ informacionFiscal.colonia }} </p>
+              </div>
+              <div>
+                <strong>Localidad:</strong>
+                <p> {{ informacionFiscal.localidad }} </p>
+              </div>
+              <div>
+                <strong>Referencia:</strong> 
+               <p> {{ informacionFiscal.referencia }} </p>
+              </div>
+              <div>
+                <strong>Municipio:</strong> 
+               <p> {{ informacionFiscal.municipio }}</p>
+              </div>
+            </mat-card>
+          </mat-card-content>
+        </mat-card>
+
+      </mat-tab>
+
+    </mat-tab-group>
+  </mat-card>
+</div>

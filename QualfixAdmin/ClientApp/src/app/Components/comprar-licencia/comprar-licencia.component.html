@@ -1,0 +1,30 @@
+ 
+<!-- comprar-licencia.component.html -->
+<div class="container">
+    <!-- Contenido del componente -->
+    
+    <!-- Licencias -->
+    <div *ngFor="let licencia of Licencias">
+      <div class="card for-sale">
+        <div class="card-head">
+          <div class="card-productimg">
+            <p class="descripcion">{{licencia.tipo}}</p>
+          </div>
+          <div class="card-productprice">
+            <div class="price"><p>Costo: </p> <p>{{ licencia.costo }} </p><p>MXN </p></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-productdetails">
+            <h3>Días: {{ licencia.tiempo }}</h3>
+          </div>
+       
+          <div *ngIf="!EstadoLicencia" class="paypal-button" id="paypal-button-container-{{ licencia.tipoLicenciaId }}"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 

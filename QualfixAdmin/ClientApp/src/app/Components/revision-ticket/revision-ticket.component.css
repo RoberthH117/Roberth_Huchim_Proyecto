@@ -1,0 +1,14 @@
+tr{
+    text-align: center;
+}
+th{
+    background-color:  #ffa632 !important;
+    color: #000000;
+    font-weight: 800;
+    font-size: 15px;
+    border-radius:2px ;
+    text-align: center;
+}
+td{
+    text-align: center !important;
+}

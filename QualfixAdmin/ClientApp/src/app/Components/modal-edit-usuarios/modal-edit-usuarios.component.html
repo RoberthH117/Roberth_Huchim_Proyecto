@@ -1,0 +1,69 @@
+<div class="con">
+  <mat-card>
+    <mat-card-header>
+      <img src="../../../assets/Logo_blanco_barra_menu.svg" class="logo" alt="Reportar imagen dañada" />
+      <span>Editar usuario</span>
+    </mat-card-header>
+    <mat-icon></mat-icon>
+    <mat-card-content>
+      <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()">
+        <mat-label for="nombre">Nombre:</mat-label>
+        <input matInput type="text" id="nombre" formControlName="firstName" placeholder="Escriba el nombre"
+          [ngClass]="{'input-valido': usuarioForm.get('firstName')?.valid, 'input-invalido': usuarioForm.get('firstName')?.invalid}" />
+
+        <mat-label for="apellido">Apellido:</mat-label>
+        <input type="text" id="apellido" formControlName="lastName" placeholder="Escriba el apellido"
+          [ngClass]="{'input-valido': usuarioForm.get('lastName')?.valid, 'input-invalido': usuarioForm.get('lastName')?.invalid}" />
+
+        <mat-label for="email">Correo Electrónico:</mat-label>
+        <input type="email" id="email" formControlName="email" placeholder="Escriba el correo"
+          [ngClass]="{'input-valido': usuarioForm.get('email')?.valid, 'input-invalido': usuarioForm.get('email')?.invalid}" />
+
+        <mat-label for="password">Contraseña:</mat-label>
+        <div class="password-container">
+          <input type="{{ mostrarContrasenia ? 'text' : 'password' }}" id="password" formControlName="passwordHash"
+            placeholder="Escriba una contraseña Min. 6 caracteres"
+            [ngClass]="{'input-valido': usuarioForm.get('passwordHash')?.valid, 'input-invalido': usuarioForm.get('passwordHash')?.invalid}" />
+          <button type="button" mat-icon-button class="iconomostrar" color="primary"
+            (click)="mostrarContrasenia = !mostrarContrasenia">
+            <mat-icon>{{ mostrarContrasenia ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+
+        </div>
+
+        <mat-label for="confirmar-password">Confirmar Contraseña:</mat-label>
+        <div class="password-container">
+          <input type="{{mostrarconfirmarContrasenia? 'text' : 'password'}}" id="confirmar-password"
+            formControlName="confirmPassword" placeholder="Confirme la contraseña"
+            [ngClass]="{'input-valido': usuarioForm.get('confirmPassword')?.valid, 'input-invalido': usuarioForm.get('confirmPassword')?.invalid}"
+            (keyup)="compararContrasenas()" />
+          <button type="button" class="iconomostrar" mat-icon-button color="primary"
+            (click)="mostrarconfirmarContrasenia = !mostrarconfirmarContrasenia">
+            <mat-icon>{{ mostrarconfirmarContrasenia ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+
+        </div>
+
+        <mat-error
+          *ngIf="usuarioForm.get('confirmPassword')?.hasError('contraseñasDiferentes') && usuarioForm.get('confirmPassword')?.touched">
+          Las contraseñas no coinciden.
+        </mat-error>
+
+        <mat-form-field>
+          <mat-label>status</mat-label>
+          <mat-select formControlName="activo">
+            <mat-option *ngFor="let estado of estados"
+              [value]="estado === 'Activo' ? true : false">{{estado}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="container-btn">
+          <button mat-raised-button color="warn" type="button" (click)="cancelar()">Cancelar</button>
+          <button mat-raised-button class="btn-registrar" type="submit"
+            [ngClass]="{'botones-deshabilitados': usuarioForm.invalid}"
+            [disabled]="usuarioForm.invalid">Modificar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

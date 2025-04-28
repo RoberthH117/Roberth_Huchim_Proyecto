@@ -1,0 +1,49 @@
+<div *ngIf="isLoading" class="loading-spinner">
+  <!-- Aquí puedes usar tu componente LoadingSpinnerComponent -->
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div class="container" style="padding-top: 2%;">
+  <mat-card>
+    <mat-card-title class="card__title">
+ 
+      <fieldset>Gestión de Licencias <img src="../../../assets/licencia-img.png" class="icon-agregar" alt="icon"></fieldset>
+      </mat-card-title>
+      <div class="card__header_actions">
+        <mat-card-actions class="mat-pad-none margin-none">
+    <button mat-raised-button color="primary" id="crear" (click)="agregarElemento()" *ngIf="Crear"> <mat-icon>add_circle</mat-icon> Agregar
+      Nueva Licencia</button>
+    </mat-card-actions>
+  </div>
+    <table mat-table [dataSource]="permisos" class="table table-striped" *ngIf="!isLoading">
+
+
+
+      <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td mat-cell *matCellDef="let permiso">{{ permiso.tipo }}</td>
+      </ng-container>
+      <ng-container matColumnDef="tiempo">
+        <th mat-header-cell *matHeaderCellDef> Tiempo </th>
+        <td mat-cell *matCellDef="let permiso">{{ permiso.tiempo }} Días</td>
+      </ng-container>
+      <ng-container matColumnDef="costo">
+        <th mat-header-cell *matHeaderCellDef> Costo </th>
+        <td mat-cell *matCellDef="let permiso">{{ permiso.costo }} $</td>
+      </ng-container>
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let elemento">
+          <button mat-icon-button id="editar" (click)="editarElemento(elemento)" *ngIf="Editar">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button id="borrar" (click)="eliminarElemento(elemento)" *ngIf="Eliminar">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="totalElements" [pageSize]="pageSize" (page)="onPageChange($event)"></mat-paginator>
+  </mat-card>
+</div>

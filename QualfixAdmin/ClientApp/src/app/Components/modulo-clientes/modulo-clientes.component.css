@@ -1,0 +1,62 @@
+.btn-agregar{
+    padding: 20px; 
+    background-color: #e96300!important;
+
+    color: #ffff !important;
+}
+tr{
+    text-align: center;
+}
+th{
+    background-color:  #ffa632 !important;
+    color: #000000;
+    font-weight: 800;
+    font-size: 15px;
+    border-radius:2px ;
+    text-align: center;
+}
+td{
+    text-align: center !important;
+}
+.content{
+    width: 100%;
+    height: auto;
+    border: solid;
+     
+}
+#crear{
+   background-color: #e96300;
+   color: #ffff;
+   fill: #ffffff;
+   margin-bottom: 20px;
+}
+#editar{
+ background-color: #e96300;
+}
+#borrar{
+    background-color: red;
+} 
+.card__title{
+    padding: 15px;
+    background-color: #e96300 !important;
+    text-align: center;
+    font-family:  'Poppins', sans-serif;
+    color: white;
+}
+mat-card{
+    padding: 15px;
+    font-family:  'Poppins', sans-serif;
+}
+.icon-agregar{
+    width: 65px;
+    margin-left: 15px;
+}
+.btn-action{
+    margin-right: 15px;
+    background-color: #e96300 !important;
+    color: white !important;
+}
+.btn-edit{
+    background-color: #ffa632 !important;
+    color: white !important;
+}

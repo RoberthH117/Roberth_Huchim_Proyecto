@@ -1,0 +1,144 @@
+.logo{width: 15%;}
+mat-card{
+    font-family: 'Montserrat', sans-serif;
+    /* border: solid #ffa632; */
+    width: 1250px;
+}
+mat-card-header{
+    background-color: #e96300;
+    color: #ffff;
+    font-size: 23px;
+    font-weight:800;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 15px;
+    
+}
+mat-card-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    /* border: solid #e96300; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+mat-card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-registrar{
+    background-color: #e96300 ;
+    color: #ffff;
+    fill: #ffff;
+       
+}
+mat-label{
+    color: #e96300;
+    font-size: 13px;
+    font-weight: 600;
+    
+}
+input{
+    border: solid #ffa632;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+mat-form-field{
+    width: 100%;
+}
+.icon{
+    width: 3%;
+}
+.con{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.container-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.example {
+    display: flex; /* Usa flexbox para organizar las columnas */
+    justify-content: space-between; /* Separa las columnas tanto como sea posible */
+    width: 100%;
+  }
+  
+  .example-container-permisos,
+  .example-container-asignados {
+    width: 48%; /* Divide el espacio horizontalmente en un 50% para cada columna */
+    max-width: 100%;
+    padding: 10px; /* Agrega espacio interno a las columnas */
+    box-sizing: border-box;
+    margin-bottom: 4%;
+  }
+  
+  .example-list {
+    border: solid 1px #ccc;
+    min-height: 60px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .example-box {
+    padding: 7px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+  }
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box:last-child {
+    border: none;
+  }
+  
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+
+
+
+
+  .disabled {
+    pointer-events: none; /* Deshabilita la interacción con el elemento */
+    opacity: 0.6; /* Aplica una opacidad para indicar visualmente que está deshabilitado */
+  }
+  

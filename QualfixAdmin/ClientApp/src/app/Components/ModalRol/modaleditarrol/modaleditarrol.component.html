@@ -1,0 +1,47 @@
+<div class="con">
+  <mat-card>
+    <mat-card-header>
+      <img src="../../../assets/Roberth-logo.svg" style="width:60px" class="logo" alt="Reportar imagen dañada" />
+      <span>Registro de rol</span>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="CrearRol" (ngSubmit)="onSubmit(CrearRol)">
+        <mat-label for="nombre">Nombre:</mat-label>
+        <input matInput type="text" id="name" name="name" required placeholder="Escriba el nombre" formControlName="name" />
+
+        <mat-label for="descripcion">Descripción:</mat-label>
+        <textarea matInput id="descripcion" name="descripcion" formControlName="descripcion" rows="4" placeholder="Escriba una descripción"></textarea>
+        
+        <div class="example">
+
+          <div class="example-container-permisos">
+            <h2>Permisos</h2>
+            <div  cdkDropList id="permisosList" #permisosList="cdkDropList" [cdkDropListData]="permisos" [cdkDropListConnectedTo]="[asignadosList]" class="example-list" (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let item of permisos" [class.disabled]="(!asignados.includes('Ver Rol') && (item === 'Editar Rol' || item === 'Eliminar Rol' || item==='Crear Rol')) || (!asignados.includes('Ver Tipo Licencia') && (item === 'Editar Tipo Licencia' || item === 'Eliminar Tipo Licencia' || item==='Crear Tipo Licencia'))"  cdkDrag>{{item}}</div>
+            </div>
+            
+          </div>
+          
+          <div class="example-container-asignados">
+            <h2>Done</h2>
+            <div
+              cdkDropList id="asignadosList"
+              #asignadosList="cdkDropList"
+              [cdkDropListData]="asignados"
+              [cdkDropListConnectedTo]="[permisosList]"
+              class="example-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="example-box" *ngFor="let item of asignados" cdkDrag>{{item}}</div>
+            </div>
+ 
+        </div>
+        
+      </div>
+        <div class="container-btn">
+          <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+          <button mat-raised-button class="btn-registrar" [disabled]="!CrearRol.valid || submitted" type="submit" data-toggle="modal" data-target="#exampleModal">Editar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

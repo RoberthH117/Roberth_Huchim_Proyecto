@@ -1,0 +1,36 @@
+<div class="content">
+
+
+  <mat-card>
+    <div class="header-card">
+     
+  
+        <img src="../../../assets/cells.png" class="icon" alt=""> 
+        <mat-card-title>REGISTRAR TICKET</mat-card-title>
+      
+    </div>
+    <mat-card-content>
+<form (ngSubmit)="enviarTicket()" #formulario="ngForm">
+    <div>
+      <label for="titulo">Título</label> <br>
+      <input id="titulo" name="titulo" ngModel required>
+    </div>
+    <div>
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" name="descripcion" ngModel required></textarea>
+    </div>
+    <div>
+      <label for="imagenes">Imágenes</label>
+      <ngx-dropzone (change)="onSelect($event)">
+        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+        <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+    </ngx-dropzone>
+    </div>
+    <br>
+    <button mat-raised-button type="submit">Enviar</button>
+  </form>
+</mat-card-content>
+</mat-card>
+</div>

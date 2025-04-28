@@ -1,0 +1,94 @@
+.container {
+    width: 100%;
+    height: auto;
+  
+    }
+    
+    mat-card {
+      padding: 15px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .card__title {
+      padding: 15px;
+      background-color: #e96300 !important;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+    .icon-agregar{
+      width: 65px;
+      margin-left: 15px;
+    }
+.card-container {
+   width: 300px;
+   height: 300px;
+    align-items: center;
+    font-family: "Montserrat", sans-serif; 
+}
+mat-card-title{
+    text-transform: uppercase;
+}
+.card-header {
+    
+    justify-content: center;
+    align-items: center;
+   
+}
+.img {
+ 
+    width: 25%;
+  
+}
+.card-content {
+    width: 100%;
+    
+   
+}
+.card-actions {
+    margin-top: auto;
+    
+  
+}
+.card-actions{
+    
+    display: flex;
+    justify-content: space-around;
+}
+#btn-crear{
+    background-color: #e96300;
+    color: white;
+}
+#btn-editar{
+    background-color: #e96300;
+    color: white;
+}
+#btn-eliminar{
+    color: white;
+ background-color: red;
+}
+.card-container {
+    transition: background-color 0.3s;
+  }
+  
+  .card-container:hover {
+    background-color: rgb(255, 140, 0);
+  }
+  
+  .card-container:hover .card-subtitle {
+    color: white;
+  }
+  .paginador{
+    margin-top: 15px;
+     display: flex;
+     justify-content: space-between;
+      
+  }
+  mat-button-toggle {
+    background-color:#e96300;
+    color: white;
+  }
+  p{
+    font-size: 20px;
+ font-weight: 800;
+  }

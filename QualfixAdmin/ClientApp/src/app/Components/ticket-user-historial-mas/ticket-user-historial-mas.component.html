@@ -1,0 +1,11 @@
+
+    <h2>Descripción: {{ tickets.length > 0 ? tickets[0].id : '' }}</h2>
+    <h2>Estado: {{tickets.length>0?tickets[0].estado:''}}</h2>
+    <p>Fecha de Solicitud: {{ tickets.length > 0 ? tickets[0].fecha_Solicitud : '' }}</p>
+  
+    <h3>Imágenes:</h3>
+    <div *ngFor="let imagen of imagenes">
+      <img [src]="getBase64Image(imagen.ruta)" alt="Imagen del ticket" class="imagen-ticket">
+    </div>
+  
+    

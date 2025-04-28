@@ -1,0 +1,71 @@
+<div class="container">
+  <mat-card>
+    <div class="row">
+      <mat-card-title class="card__title">
+ 
+        <fieldset>Asignación de Licencias <img src="../../../assets/asignacion_licencias-img.png" class="icon-agregar" alt="icon"></fieldset>
+        </mat-card-title>
+       
+      <article class="content-form">
+        <form (ngSubmit)="onSubmit()">
+          <h4>Usuarios</h4>
+          <mat-form-field>
+            <mat-label>Seleccione un usuario</mat-label>
+            <mat-select [(ngModel)]="selectedUsuarioId" name="selectedUsuarioId" required>
+              <mat-option *ngFor="let usuario of usuarios" [value]="usuario.id">{{ usuario.userName }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div *ngIf="selectedUsuarioId">
+            <p>Email: {{ obtenerEmailUsuarioSeleccionado() }} </p>
+            <p>Nombre: {{ obtenerNombreUsuarioSeleccionado() }} </p>
+          </div>
+
+
+          <h4>Licencias</h4>
+          <mat-form-field>
+            <mat-label>Seleccione una licencia</mat-label>
+            <mat-select [(ngModel)]="selectedLicenciaId" name="selectedLicenciaId" required>
+              <mat-option *ngFor="let licencia of licencias" [value]="licencia.tipoLicenciaId">{{ licencia.tipo
+                }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <p class="center-align">
+            <button mat-raised-button type="submit"> <mat-icon>check</mat-icon>Asignar Licencia</button>
+          </p>
+        </form>
+        <div *ngIf="mensaje">
+          {{ mensaje }}
+        </div>
+      </article>
+
+
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        [ngStyle]="{'display': mdlSampleIsOpen ? 'block' : 'none', 'opacity': 1}">
+        <div class="gradient-bar"></div>
+        <i class="fas fa-times"></i>
+        <div class="text-wrapper">
+          <h3>Envio Exitoso</h3>
+          <p>Se agregado la licencia correctamente</p>
+
+          <button class="button button-yes" (click)="openModal(false)">Ok</button>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="Error" tabindex="-1" aria-labelledby="ErrorModalLabel"
+        [ngStyle]="{'display': ErrorIsOpen ? 'block' : 'none', 'opacity': 1}">
+        <div class="cabecera-modal"></div>
+        <i class="fas fa-times"></i>
+        <div class="text-wrapper">
+          <h3>Datos incorrectos</h3>
+          <p>Accion fallida</p>
+
+          <button class="button button-Ok" (click)="ErrorModal(false)">Ok</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

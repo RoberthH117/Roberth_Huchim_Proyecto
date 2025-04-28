@@ -1,0 +1,76 @@
+mat-toolbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: #e96300;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.logo{
+  width: 50%;
+  border-bottom: 2px solid transparent; /* Borde transparente inicial */
+  transition: border-bottom 0.3s ease;
+}
+.logo:hover {
+ 
+  width: 52%;
+  border-bottom: 2px solid  #ffa632 ; 
+}
+
+ 
+.btn-menu{
+  background-color: white;
+  color: rgb(255, 255, 255) !important;
+}
+a{
+  font-family: 'Poppins', sans-serif;
+}
+.sidenav{
+  background-color: #e96300 ;
+  padding: 20px;
+  border-radius: 0px 15px 15px 0px;
+}
+.items{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white !important;
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 5px;
+}
+.items:hover {
+  color: #e96300 !important ;
+  background-color: white; /* Color de fondo al pasar el mouse */
+}
+.items mat-icon {
+  margin-right: 10px; /* Espaciado entre el icono y el texto */
+}
+.btn-inicio,.btn-menu{
+  color: #e96300 !important;
+  border-radius: 15px;
+}
+.sidenav-container{
+  background-image: url("../../assets/Fondo_login.png") ; 
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 50px;
+  width: 100%;
+ 
+}
+.btn-cerrar{
+  margin-top: 30px;
+}
+
+.contenderoHijo {
+   /* padding: 60px 20px 20px 20px; / */
+  height: 100vh;
+  
+ 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}

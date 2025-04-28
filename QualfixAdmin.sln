@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualfixAdmin", "QualfixAdmin\QualfixAdmin.csproj", "{4AA02450-C357-40AD-8024-0759629742C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualfixAdmin.dal", "QualfixAdmin.dal\QualfixAdmin.dal.csproj", "{3C399CA3-EC0F-4143-B03B-FD5A9AADF402}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualfixAdmin.ioc", "QualfixAdmin.ioc\QualfixAdmin.ioc.csproj", "{41812D4B-E74D-4BCC-9819-2E527A75BBB1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualfixAdmin.model", "QualfixAdmin.model\QualfixAdmin.model.csproj", "{AA99283F-9E5E-4A4A-82DE-8611BEE3A59F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualfixAdmin.Services", "QualfixAdmin.Services\QualfixAdmin.Services.csproj", "{986F5BCC-2F8D-4EB5-B7AC-E863E57BA886}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualfixAdmin.DataModel", "QualfixAdmin.DataModel\QualfixAdmin.DataModel.csproj", "{A8B08005-D68F-42F3-8C54-D9DC946E62ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AA02450-C357-40AD-8024-0759629742C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AA02450-C357-40AD-8024-0759629742C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AA02450-C357-40AD-8024-0759629742C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AA02450-C357-40AD-8024-0759629742C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C399CA3-EC0F-4143-B03B-FD5A9AADF402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C399CA3-EC0F-4143-B03B-FD5A9AADF402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C399CA3-EC0F-4143-B03B-FD5A9AADF402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C399CA3-EC0F-4143-B03B-FD5A9AADF402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41812D4B-E74D-4BCC-9819-2E527A75BBB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41812D4B-E74D-4BCC-9819-2E527A75BBB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41812D4B-E74D-4BCC-9819-2E527A75BBB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41812D4B-E74D-4BCC-9819-2E527A75BBB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA99283F-9E5E-4A4A-82DE-8611BEE3A59F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA99283F-9E5E-4A4A-82DE-8611BEE3A59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA99283F-9E5E-4A4A-82DE-8611BEE3A59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA99283F-9E5E-4A4A-82DE-8611BEE3A59F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{986F5BCC-2F8D-4EB5-B7AC-E863E57BA886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{986F5BCC-2F8D-4EB5-B7AC-E863E57BA886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{986F5BCC-2F8D-4EB5-B7AC-E863E57BA886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{986F5BCC-2F8D-4EB5-B7AC-E863E57BA886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B08005-D68F-42F3-8C54-D9DC946E62ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B08005-D68F-42F3-8C54-D9DC946E62ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B08005-D68F-42F3-8C54-D9DC946E62ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B08005-D68F-42F3-8C54-D9DC946E62ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD4D4952-A9DA-481F-9A81-AD247BFFD26D}
+	EndGlobalSection
+EndGlobal

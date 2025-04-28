@@ -1,0 +1,83 @@
+<div class="content">
+
+
+<mat-card>
+  <div class="header-card">
+   
+
+      <img src="../../../assets/cells.png" class="icon" alt=""> 
+      <mat-card-title>REGISTRAR CONFIGURACIÓN DE CFDI</mat-card-title>
+    
+  </div>
+  <mat-card-content>
+    <form [formGroup]="configForm" (ngSubmit)="onSubmit()">
+      
+      <mat-form-field class="m-0 px-1 col-md-12" appearance="outline"   >
+        <mat-label>Cuenta</mat-label>
+        <input type="email" matInput formControlName="cuenta" placeholder="Ex. pat@example.com">
+      </mat-form-field>
+
+      <mat-form-field class="m-0 px-1 col-md-12" appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input type="email" matInput formControlName="usuario" placeholder="Ex. pat@example.com">
+      </mat-form-field>
+
+      <mat-form-field class="m-0 px-1 col-md-12" appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input type="email" matInput formControlName="passwordUsuario" placeholder="Ex. pat@example.com">
+      </mat-form-field>
+
+      <h2 style="text-align: left !important">
+        Datos del Cert. Sello Digital
+      </h2>
+      <h3 style="text-align: left !important">Certificado</h3>
+      <ngx-dropzone
+        (change)="onSelectCert($event)"
+        [multiple]="false"
+        accept=".cer"
+        id="fileCer"
+     
+      >
+        <ngx-dropzone-label
+          >Arraste o de clic aquí para subir.</ngx-dropzone-label
+        >
+        <ngx-dropzone-preview
+          *ngFor="let f of fileCer"
+          [removable]="true"
+          (removed)="onRemoveCert(f)"
+        >
+          <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      </ngx-dropzone>
+
+      <br>
+      <mat-form-field class="m-0 px-1 col-md-12" appearance="outline">
+        <mat-label>Contraseña llave</mat-label>
+        <input type="email" matInput formControlName="filePasswordKey" placeholder="Ex. pat@example.com">
+      </mat-form-field>
+
+      <h3 style="text-align: left !important">Llave</h3>
+      <ngx-dropzone
+        (change)="onSelectKey($event)"
+        [multiple]="false"
+        accept=".key"
+        id="fileKey"
+      >
+        <ngx-dropzone-label
+          >Arraste o de clic aquí para subir.</ngx-dropzone-label
+        >
+        <ngx-dropzone-preview
+          *ngFor="let f of fileKey"
+          [removable]="true"
+          (removed)="onRemoveKey(f)"
+        >
+          <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      </ngx-dropzone>
+       <br>
+      <button mat-raised-button class="btn-registrar" type="submit">Registrar Nueva Configuración  <img src="../../../assets/agregar-archivo.png" class="icon-dos" alt="icon"></button>
+    
+     </form>
+  </mat-card-content>
+</mat-card>
+</div>

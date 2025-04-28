@@ -1,0 +1,109 @@
+ 
+.logo {
+    width: 15%;
+}
+
+form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    animation: fadeIn 0.5s; /* Agregada animación fadeIn */
+}
+
+mat-card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-registrar {
+    width: 100%;
+    background-color: #e96300 !important;
+    color: #fff !important;
+     
+}
+
+mat-label {
+    color: #e96300;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+input {
+    outline: none;
+    
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.icon {
+    width: 3%;
+}
+
+.con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 15%;
+}
+
+mat-card {
+    font-family: 'Montserrat', sans-serif;
+    width: 600px;
+}
+
+mat-card-header {
+    background-color: #e96300;
+    color: #ffff;
+    font-size: 23px;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+mat-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botones-deshabilitados {
+    background-color: #ccc; /* Cambia el color de fondo a gris */
+    color: #fff; /* Cambia el color del texto a blanco, o el color que prefieras */
+}
+
+.input-valido {
+    border:solid green;
+  }
+  
+  .input-invalido {
+    border: solid   #ffa632;
+  }
+  .password-container{
+    width: 100%;
+    display: flex;
+}
+  .iconomostrar{
+    fill: #e96300;
+    color: #e96300;
+ }

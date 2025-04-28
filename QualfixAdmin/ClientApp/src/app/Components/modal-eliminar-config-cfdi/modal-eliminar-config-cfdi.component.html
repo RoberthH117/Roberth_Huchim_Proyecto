@@ -1,0 +1,19 @@
+
+<mat-card>
+    <mat-card-header>
+      <img src="../../../assets/Logo_blanco_barra_menu.svg" class="logo" alt="Reportar imagen dañada" />
+      <span  >Eliminar Configuración de CFDI</span>
+    </mat-card-header>
+    
+    <mat-dialog-content >
+      <img src="../../../assets/borrar.png" alt="icon" class="icon">
+      <h2 color="warn">
+        ¿Estás seguro de que quieres eliminar la Configuración de CFDI?
+      </h2>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="true" mat-raised-button color="primary">Cancelar</button>
+      <button mat-button (click)="Eliminar(configCFDI.id)" mat-raised-button [mat-dialog-close]="true" color="warn">Eliminar</button>
+    </mat-dialog-actions>
+    
+  </mat-card>

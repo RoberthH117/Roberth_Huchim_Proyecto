@@ -1,0 +1,24 @@
+<div class="con">
+    <mat-card>
+      <mat-card-header>
+        <img src="../../../assets/Roberth-logo.svg" style="width:60px" class="logo" alt="Reportar imagen dañada" />
+        <span>Registro de Tipo Licencia</span>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="CrearTipoLicencia" (ngSubmit)="onSubmit(CrearTipoLicencia)">
+          
+          <mat-label for="tipo">Tipo:</mat-label>
+          <textarea matInput id="tipo" name="tipo" formControlName="tipo" rows="4" placeholder="Escriba una descripción"></textarea>
+          <mat-label for="tiempo">Tiempo:</mat-label>
+          <input matInput type="number" id="tiempo" name="tiempo" required placeholder="Escriba la duracion en dias" formControlName="tiempo" />
+          <mat-label for="tiempo">Costo:</mat-label>
+          <input matInput type="number" id="costo" name="costo" required placeholder="Escriba el costo" formControlName="costo" />
+  
+          <div class="container-btn">
+            <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+            <button mat-raised-button class="btn-registrar" [disabled]="!CrearTipoLicencia.valid || submitted" type="submit" data-toggle="modal" data-target="#exampleModal">Agregar</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

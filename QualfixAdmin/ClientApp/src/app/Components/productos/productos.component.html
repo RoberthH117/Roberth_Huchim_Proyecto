@@ -1,0 +1,46 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title class="card__title">
+
+      <fieldset>Productos <img src="../../../assets/Roberth-logo.svg" class="icon-agregar" alt="icon"></fieldset>
+    </mat-card-title>
+    <br>
+    <div class="card__header_actions">
+      <mat-card-actions class="mat-pad-none margin-none">
+        <button mat-raised-button id="btn-crear" (click)="openDialogCrear()">Agregar Producto</button>
+      </mat-card-actions>
+    </div>
+    <div class="paginador">
+
+
+      <mat-button-toggle-group>
+        <mat-button-toggle color="warn" (click)="paginaprev()">Anterior</mat-button-toggle>
+        <mat-button-toggle (click)="paginanext()">Siguiente</mat-button-toggle>
+      </mat-button-toggle-group>
+      <p>pagina: {{pagina}}</p>
+    </div>
+
+    <mat-grid-list cols="4">
+      <mat-grid-tile *ngFor="let item of productos">
+        <mat-card class="card-container">
+          <mat-card-header class="card-header">
+            <img class="img" src="../../../assets/Icon_Logo_Naranja.svg" alt="">
+            <mat-card-title>{{ item.nombre }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content class="card-content">
+            <mat-card-subtitle class="card-subtitle">
+              {{ item.descripcion }}
+            </mat-card-subtitle>
+          </mat-card-content>
+
+
+          <mat-card-actions class="card-actions">
+            <button mat-mini-fab id="btn-editar" (click)="openDialogEditar(item.id)"><mat-icon>edit</mat-icon></button>
+            <button mat-mini-fab id="btn-eliminar"
+              (click)="openDialogEliminar(item.id)"><mat-icon>delete</mat-icon></button>
+
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>

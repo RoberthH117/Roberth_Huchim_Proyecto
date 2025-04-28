@@ -1,0 +1,30 @@
+.header-card{
+    display: flex;
+    padding: 15px;
+    background-color: #e96300;
+    margin-bottom: 25px;
+}
+.icon{
+    width: 25px;
+    margin: 5px;
+}
+.content{
+    max-height: 90vh; 
+}
+ngx-dropzone{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+mat-card-title{
+    color:  white !important;
+}
+.btn-registrar{
+    background-color: #e96300 !important;
+    color: white !important;
+    padding: 25px;
+}
+.icon-dos{
+    width: 30px;
+}

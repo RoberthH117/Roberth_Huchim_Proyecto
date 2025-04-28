@@ -1,0 +1,122 @@
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+  .loading .shield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(170, 170, 255, 0.6);
+  }
+  .loading .loading-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .loading .loading-area .spinner-wrapper {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .loading .loading-area .spinner {
+    flex: 0 0 auto;
+    border-radius: 50%;
+    border-color:  #e96300;
+    border-style: solid;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  .loading .loading-area .spinner.large {
+    border-width: 6px;
+    width: 250px;
+    height: 250px;
+  }
+  .loading .loading-area .spinner.medium {
+    border-width: 4px;
+    width: 162.5px;
+    height: 162.5px;
+  }
+  .loading .loading-area .spinner.small {
+    border-width: 2px;
+    width: 100px;
+    height: 100px;
+  }
+  .loading .loading-area .spinner.slow-spin {
+    -webkit-animation-name: rotate;
+            animation-name: rotate;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  .loading .loading-area .spinner.normal-spin {
+    -webkit-animation-name: rotate-reverse;
+            animation-name: rotate-reverse;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  .loading .loading-area .spinner.fast-spin {
+    -webkit-animation-name: rotate;
+            animation-name: rotate;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+  }
+  
+  @-webkit-keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes rotate-reverse {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes rotate-reverse {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }

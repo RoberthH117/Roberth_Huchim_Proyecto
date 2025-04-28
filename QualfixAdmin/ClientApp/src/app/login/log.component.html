@@ -1,0 +1,82 @@
+ 
+<div class="content">
+   <div class="container">
+    
+       <div class="wrapper">
+         <img src="../../assets/Roberth-logo.svg" style='width:150px;height:150px; text-align:center; margin-left: 7vw;' alt="">
+         <br> <br>
+           <form [formGroup]="loginForm" (submit)="onLogin(loginForm.value)">
+             <h1>Bienvenido</h1>
+         
+             <div class="input-box">
+               <input type="text" id="correo" placeholder="Usuario" name="correo" formControlName="correo">
+               <div *ngIf="loginForm.get('correo').errors && loginForm.get('correo').dirty">
+                 <p class="messageError" *ngIf="loginForm.get('correo').hasError('required')">Campo requerido</p>
+                 <p class="messageError" *ngIf="loginForm.get('correo').hasError('pattern')">Correo inválido</p>
+               </div>
+             </div>
+         
+             <div class="input-box">
+               <input type="{{ mostrarContrasena ? 'text' : 'password' }}" id="passwordHash" placeholder="Contraseña" name="passwordHash" required formControlName="passwordHash">
+               <span class="mostrar-contrasena" (click)="toggleMostrarContrasena()">
+                 <i class="far fa-eye" *ngIf="!mostrarContrasena"></i>
+                 <i class="far fa-eye-slash" *ngIf="mostrarContrasena"></i>
+               </span>
+               <div *ngIf="loginForm.get('passwordHash').errors && loginForm.get('passwordHash').dirty">
+                 <p class="messageError" *ngIf="loginForm.get('passwordHash').hasError('required')">Campo requerido</p>
+                 <p class="messageError" *ngIf="loginForm.get('passwordHash').hasError('minlength')">Mínimo de 5 caracteres</p>
+               </div>
+             </div>
+         
+             <div class="remember-forgot">
+               <a routerLink="/forget">¿Olvidaste la contraseña?</a>
+             </div>
+         
+             <button [disabled]="!loginForm.valid || submitted" type="submit" class="btn" data-toggle="modal" data-target="#exampleModal">Continuar</button>
+         
+             <div class="register-link">
+               <p>¿No tienes una cuenta?<a routerLink="/forget">  ¡Regístrate!</a></p>
+             </div>
+           </form>
+         </div>
+   </div>
+</div>
+      
+      
+      
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" [ngStyle]="{'display': mdlSampleIsOpen ? 'block' : 'none', 'opacity': 1}" >
+        <div class="gradient-bar"></div>
+        <i class="fas fa-times"></i>
+        <div class="text-wrapper">
+          <h3>Envio Exitoso</h3>
+          <p>Se ha ingresado correctamente</p>
+       
+          <button class="button button-yes" (click)="openModal(false)" (click)="Redireccionar()">Ok</button>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="Error" tabindex="-1" aria-labelledby="ErrorModalLabel" [ngStyle]="{'display': ErrorIsOpen ? 'block' : 'none', 'opacity': 1}" >
+        <div class="cabecera-modal"></div>
+        <i class="fas fa-times"></i>
+        <div class="text-wrapper">
+          <h3>Datos incorrectos</h3>
+          <p>Los datos ingresados no son correctos para permitir el accesos, verifique si la contraseña y correo son correctos</p>
+       
+          <button class="button button-Ok" (click)="ErrorModal(false)" >Ok</button>
+        </div>
+      </div>
+    
+ 
+
+
+
+

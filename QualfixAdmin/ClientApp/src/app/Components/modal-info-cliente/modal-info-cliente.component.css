@@ -1,0 +1,42 @@
+.content{
+    width: 800px;
+    height: 80vh;
+    padding: 15px; 
+}
+mat-tab{
+    background-color: coral;
+}
+mat-card-title{
+    width: 100%;
+    background-color:#e96300;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 9px ;
+}
+mat-card
+{
+    width: 100%;
+    font-family:  'Poppins', sans-serif;
+}
+mat-card-content
+{
+    width: 100%;
+    display: flex;
+    
+    padding: 15px;
+}
+strong {
+    color: #e96300; /* Change this to your desired color */
+  }
+.icon-agregar{
+    width: 45px;
+    margin-left: 15px;
+}
+.content-info{
+    border-radius: 5px;
+    padding: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
