@@ -26,9 +26,9 @@ RUN dotnet restore QualfixAdmin/QualfixAdmin.csproj
 COPY . .
 
 # Instalar dependencias de Angular
-WORKDIR ClientApp    
+QualfixAdmin/ClientApp
 RUN npm install
 
 # Volver a la carpeta del backend y publicar
-WORKDIR /
+QualfixAdmin/ClientApp/src
 RUN dotnet publish -c Release -o /app/publish
