@@ -38,7 +38,7 @@ export class ModalRegProductosComponent implements OnInit{
 
   public  onSubmit(){
     if (this.form.valid) {
-     this.productoService.CrearUsuario('https://localhost:7141/api/producto',this.form.value);
+     this.productoService.CrearUsuario('https://roberth-huchim-proyecto.onrender.com/api/producto',this.form.value);
     } else {
        
     }  
