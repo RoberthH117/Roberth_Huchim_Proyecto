@@ -43,7 +43,7 @@ export class ProductosComponent implements OnInit {
   }
 
   public cargarProductos(){
-    this.productoservice.getAll(`https://localhost:7141/api/producto?pagina=${this.pagina}`).subscribe(Response =>{
+    this.productoservice.getAll(`https://roberth-huchim-proyecto.onrender.com/api/producto?pagina=${this.pagina}`).subscribe(Response =>{
       this.productos = Response;
       console.log(Response);
     })

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { concatMap } from 'rxjs';
-import { RegistroUsuariomodel } from 'src/app/Models/Usuario-interface';
+import {RegistroUsuariomodel } 'src/app/Models/Usuario-interface.ts'
 import { UsuarioService } from 'src/app/Services/usuario.service';
 import { PerfilService } from 'src/app/service/perfil.service';
 import { RolService } from 'src/app/service/rol.service';
@@ -97,7 +97,7 @@ selectedNombre:string|null=null;
   const selectedNombre=this.form.get('nombre')?.value;
 
   this.usuarioService.CrearUsuario(
-    `https://localhost:7141/api/usuario/AgregarUsuario`,
+    `https://roberth-huchim-proyecto.onrender.com/api/usuario/AgregarUsuario`,
     this.form.value,
     this.selectedNombre || undefined,
     this.selectedPerfil ||undefined,
