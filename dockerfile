@@ -1,5 +1,5 @@
 ﻿# Imagen base para build
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /QualfixAdmin
 
 # Instalar Node.js y Angular CLI
@@ -31,7 +31,7 @@ WORKDIR /QualfixAdmin/QualfixAdmin
 RUN dotnet publish -c Release -o /app/publish
 
 # 🔥 Nueva imagen final para producción
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
