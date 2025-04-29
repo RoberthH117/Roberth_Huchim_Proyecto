@@ -1,24 +1,28 @@
-﻿# Usa la imagen de .NET SDK para compilar
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+﻿# Usa el SDK de .NET para compilar
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
 WORKDIR /src
 
-# Copia los archivos de proyecto y restaura las dependencias
-COPY ["QualfixAdmin.csproj", "."]
-RUN dotnet restore "QualfixAdmin.csproj"
+# Copiamos los archivos de los proyectos
+COPY QualfixAdmin/QualfixAdmin.csproj QualfixAdmin/
+COPY QualfixAdmin.dal/QualfixAdmin.dal.csproj QualfixAdmin.dal/
+COPY QualfixAdmin.model/QualfixAdmin.model.csproj QualfixAdmin.model/
+COPY QualfixAdmin.Services/QualfixAdmin.Services.csproj QualfixAdmin.Services/
 
-# Copia todo el código fuente
+# Restaurar dependencias
+RUN dotnet restore QualfixAdmin/QualfixAdmin.csproj
+
+# Ahora copiamos todo el contenido
 COPY . .
 
-# Publica la aplicación
-RUN dotnet publish "QualfixAdmin.csproj" -c Release -o /app/publish
+# Publicamos la app
+WORKDIR /src/QualfixAdmin
+RUN dotnet publish -c Release -o /app/publish
 
-# Usa la imagen de .NET Runtime para correr la aplicación
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+# Ahora creamos la imagen final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+
 WORKDIR /app
-EXPOSE 80
-
-# Copia los archivos publicados al contenedor final
 COPY --from=build /app/publish .
 
-# Establece el punto de entrada para la aplicación
 ENTRYPOINT ["dotnet", "QualfixAdmin.dll"]
