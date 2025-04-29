@@ -3,24 +3,11 @@
 services:
   backend:
     build:
-      context: ./QualfixAdmin
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: QualfixAdmin/Dockerfile
     ports:
       - "5000:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     networks:
       - app-network
-
-  frontend:
-    build:
-      context: ./ClientApp
-      dockerfile: Dockerfile
-    ports:
-      - "4200:80"
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge

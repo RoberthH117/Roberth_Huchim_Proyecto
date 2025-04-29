@@ -19,11 +19,12 @@ RUN npm run build --prod
 # Usa una imagen ligera de Nginx para servir la aplicación construida
 FROM nginx:alpine
 
-# Copia los archivos de construcción de Angular al contenedor Nginx
-COPY --from=build /app/dist/your-angular-app /usr/share/nginx/html
+# Copia los archivos del dist directamente (porque no hay carpeta intermedia)
+COPY --from=build /app/dist/ /usr/share/nginx/html
 
 # Expone el puerto 80 para servir la app
 EXPOSE 80
 
 # Configura Nginx para que sirva la aplicación
 CMD ["nginx", "-g", "daemon off;"]
+

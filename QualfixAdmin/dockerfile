@@ -2,15 +2,14 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# Copia los archivos de proyecto y restaura las dependencias
-COPY ["QualfixAdmin.csproj", "."]
+# Copia todo
+COPY QualfixAdmin/*.csproj .
 RUN dotnet restore "QualfixAdmin.csproj"
 
-# Copia el código fuente
-COPY . .
+# Copia todo el código fuente
+COPY QualfixAdmin/. .
 
 # Publica la aplicación
-WORKDIR /src/QualfixAdmin
 RUN dotnet publish "QualfixAdmin.csproj" -c Release -o /app/publish
 
 # Usa la imagen de .NET Runtime para correr la aplicación
