@@ -7,7 +7,7 @@ import { LicenciaModel } from '../Modelos/Licencia.interface';
   providedIn: 'root'
 })
 export class LicenciaService {
-  private baseUrl: string = 'https://localhost:7141/Licencia'; // Reemplaza 'tu-api-base-url' con la URL de tu API
+  private baseUrl: string = 'https://roberth-huchim-proyecto.onrender.com/Licencia'; // Reemplaza 'tu-api-base-url' con la URL de tu API
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { IdRequest, Reporte, ReporteModelo } from '../Modelos/Ticket.interface';
   providedIn: 'root'
 })
 export class TicketService {
-  private uriApi='https://localhost:7141/Ticket/';
+  private uriApi='https://roberth-huchim-proyecto.onrender.com/Ticket/';
 
 
   constructor(private https:HttpClient) { }

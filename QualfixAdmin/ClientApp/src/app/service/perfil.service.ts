@@ -12,7 +12,7 @@ export class PerfilService {
   private nuevoRolSubjectModificado = new Subject<PerfilAccesosModel>();
   private elementoEliminadoSubject = new Subject<string>();
 
-private uriApi='https://localhost:7141/Perfil/'
+private uriApi='https://roberth-huchim-proyecto.onrender.com/Perfil/'
 
   constructor(private https:HttpClient) { }
 

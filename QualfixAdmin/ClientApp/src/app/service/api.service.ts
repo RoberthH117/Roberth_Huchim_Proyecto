@@ -14,7 +14,7 @@ import { DataI } from '../Modelos/Data.interface';
 export class ApiService {
 
 
-private uriApi='https://localhost:7141/Login/';
+private uriApi='https://roberth-huchim-proyecto.onrender.com/Login/';
 
 
   constructor(private https:HttpClient) { }

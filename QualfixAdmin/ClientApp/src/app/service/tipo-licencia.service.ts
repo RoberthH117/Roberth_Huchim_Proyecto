@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TipoLicenciaService {
-private uriApi='https://localhost:7141/TipoLicencia/';
+private uriApi='https://roberth-huchim-proyecto.onrender.com/TipoLicencia/';
 
 private nuevalicenciaSubjectMoficado = new Subject<TipoLicenciaI>
 private elementoEliminadoSubject= new Subject<number>();

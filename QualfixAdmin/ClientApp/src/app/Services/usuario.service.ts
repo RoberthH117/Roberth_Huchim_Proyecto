@@ -20,7 +20,7 @@ export class UsuarioService {
 
   getAllUsersWithProfiles(): Observable<any> {
     // Realiza una solicitud HTTP GET y tipa la respuesta.
-    const url = `https://localhost:7141/api/usuario/ObtenerUsuario`;
+    const url = `https://roberth-huchim-proyecto.onrender.com/api/usuario/ObtenerUsuario`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json',

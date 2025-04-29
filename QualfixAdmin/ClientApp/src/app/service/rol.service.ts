@@ -14,7 +14,7 @@ import { ModeloPermisos } from '../Modelos/Permisos.interface';
 export class RolService {
 
 
-private uriApi='https://localhost:7141/CrearRol/';
+private uriApi='https://roberth-huchim-proyecto.onrender.com/CrearRol/';
 
 private nuevoRolSubjectModificado = new Subject<PermissionsRolRequest>();
 private elementoEliminadoSubject = new Subject<string>();
