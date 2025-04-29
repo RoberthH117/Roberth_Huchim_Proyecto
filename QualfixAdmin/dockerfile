@@ -3,8 +3,8 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
 # Copia los archivos de proyecto y restaura las dependencias
-COPY ["QualfixAdmin/QualfixAdmin.csproj", "QualfixAdmin/"]
-RUN dotnet restore "QualfixAdmin/QualfixAdmin.csproj"
+COPY ["QualfixAdmin.csproj", "."]
+RUN dotnet restore "QualfixAdmin.csproj"
 
 # Copia el código fuente
 COPY . .
