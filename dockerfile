@@ -1,6 +1,6 @@
 ﻿# Imagen base para build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
+WORKDIR /QualfixAdmin
 
 # Instalar Node.js (incluye npm)
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
@@ -26,9 +26,11 @@ RUN dotnet restore QualfixAdmin/QualfixAdmin.csproj
 COPY . .
 
 # Instalar dependencias de Angular
-QualfixAdmin/ClientApp
+WORKDIR /ClientApp
 RUN npm install
 
 # Volver a la carpeta del backend y publicar
-QualfixAdmin/ClientApp/src
+WORKDIR ClientApp/src
 RUN dotnet publish -c Release -o /app/publish
+
+
