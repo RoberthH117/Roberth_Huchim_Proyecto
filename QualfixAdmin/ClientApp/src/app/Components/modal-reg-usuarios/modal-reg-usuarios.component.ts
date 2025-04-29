@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { concatMap } from 'rxjs';
-import {RegistroUsuariomodel } from 'src/app/Models/Usuario-interface.ts'
 import { UsuarioService } from 'src/app/Services/usuario.service';
 import { PerfilService } from 'src/app/service/perfil.service';
 import { RolService } from 'src/app/service/rol.service';
+import {RegistroUsuariomodel } from 'src/app/Models/Usuario-interface'
 
 @Component({
   selector: 'app-modal-reg-usuarios',
