@@ -30,5 +30,5 @@ WORKDIR ClientApp
 RUN npm install
 
 # Volver a la carpeta del backend y publicar
-WORKDIR 
+WORKDIR /
 RUN dotnet publish -c Release -o /app/publish
