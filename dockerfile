@@ -11,6 +11,9 @@ COPY QualfixAdmin/QualfixAdmin.csproj QualfixAdmin/
 COPY QualfixAdmin.dal/QualfixAdmin.dal.csproj QualfixAdmin.dal/
 COPY QualfixAdmin.model/QualfixAdmin.model.csproj QualfixAdmin.model/
 COPY QualfixAdmin.Services/QualfixAdmin.Services.csproj QualfixAdmin.Services/
+COPY QualfixAdmin.DataModel/QualfixAdmin.DataModel.csproj QualfixAdmin.DataModel/
+COPY QualfixAdmin.ioc/QualfixAdmin.ioc.csproj QualfixAdmin.ioc/
+
 # Otros .csproj si los tienes...
 
 # Restaurar
