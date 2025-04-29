@@ -1,0 +1,25 @@
+﻿# Usa la imagen de .NET SDK para compilar
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+
+# Copia los archivos de proyecto y restaura las dependencias
+COPY ["QualfixAdmin/QualfixAdmin.csproj", "QualfixAdmin/"]
+RUN dotnet restore "QualfixAdmin/QualfixAdmin.csproj"
+
+# Copia el código fuente
+COPY . .
+
+# Publica la aplicación
+WORKDIR /src/QualfixAdmin
+RUN dotnet publish "QualfixAdmin.csproj" -c Release -o /app/publish
+
+# Usa la imagen de .NET Runtime para correr la aplicación
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+# Copia los archivos publicados al contenedor final
+COPY --from=build /app/publish .
+
+# Establece el punto de entrada para la aplicación
+ENTRYPOINT ["dotnet", "QualfixAdmin.dll"]
