@@ -2,11 +2,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /QualfixAdmin
 
-# Instalar Node.js (incluye npm)
+# Instalar Node.js y Angular CLI
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get install -y nodejs
-
-# Instalar Angular CLI globalmente
 RUN npm install -g @angular/cli
 
 # Copiar los .csproj
@@ -17,20 +15,17 @@ COPY QualfixAdmin.Services/QualfixAdmin.Services.csproj QualfixAdmin.Services/
 COPY QualfixAdmin.DataModel/QualfixAdmin.DataModel.csproj QualfixAdmin.DataModel/
 COPY QualfixAdmin.ioc/QualfixAdmin.ioc.csproj QualfixAdmin.ioc/
 
-# Otros .csproj si los tienes...
-
-# Restaurar
+# Restaurar dependencias
 RUN dotnet restore QualfixAdmin/QualfixAdmin.csproj
 
-# Copiar todo el resto del código
+# Copiar todo el código fuente
 COPY . .
 
-# Instalar dependencias de Angular
-WORKDIR /ClientApp
+# 👉 Ir a la carpeta que SÍ contiene package.json
+WORKDIR /QualfixAdmin/QualfixAdmin/ClientApp
 RUN npm install
 
-# Volver a la carpeta del backend y publicar
-WORKDIR ClientApp/src
+# 👉 Volver a la carpeta donde está el .csproj del backend
+WORKDIR /QualfixAdmin/QualfixAdmin
 RUN dotnet publish -c Release -o /app/publish
-
 
