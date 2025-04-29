@@ -1,6 +1,6 @@
-﻿EXPOSE 10000
+﻿# Imagen base para build
+EXPOSE 10000
 
-# Imagen base para build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /QualfixAdmin
 
