@@ -1,4 +1,5 @@
 ﻿EXPOSE 10000
+
 # Imagen base para build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /QualfixAdmin
@@ -31,3 +32,13 @@ RUN npm install --legacy-peer-deps
 WORKDIR /QualfixAdmin/QualfixAdmin
 RUN dotnet publish -c Release -o /app/publish
 
+# 🔥 Nueva imagen final para producción
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+
+# Si Render necesita el puerto dinámico
+ENV ASPNETCORE_URLS=http://+:10000
+
+# Arrancar la app
+ENTRYPOINT ["dotnet", "QualfixAdmin.dll"]
