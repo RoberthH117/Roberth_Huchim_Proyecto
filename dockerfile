@@ -23,7 +23,7 @@ COPY . .
 
 # 👉 Ir a la carpeta que SÍ contiene package.json
 WORKDIR /QualfixAdmin/QualfixAdmin/ClientApp
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # 👉 Volver a la carpeta donde está el .csproj del backend
 WORKDIR /QualfixAdmin/QualfixAdmin
