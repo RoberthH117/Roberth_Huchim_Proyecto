@@ -6,6 +6,9 @@ WORKDIR /src
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get install -y nodejs
 
+# Instalar Angular CLI globalmente
+RUN npm install -g @angular/cli
+
 # Copiar los .csproj
 COPY QualfixAdmin/QualfixAdmin.csproj QualfixAdmin/
 COPY QualfixAdmin.dal/QualfixAdmin.dal.csproj QualfixAdmin.dal/
