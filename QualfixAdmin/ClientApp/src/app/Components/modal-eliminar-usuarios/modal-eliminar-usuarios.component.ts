@@ -38,7 +38,7 @@ export class ModalEliminarUsuariosComponent implements OnInit{
   }
 
   Eliminar(id:string){
-    this.usuarioService.EliminarUsuario(`https://localhost:7141/api/usuario/${this.usuario.id}`);
+    this.usuarioService.EliminarUsuario(`https://roberth-huchim-proyecto.onrender.com/api/usuario/${this.usuario.id}`);
     
   }
 }

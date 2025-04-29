@@ -27,7 +27,7 @@ export class ModalEliminarProductosComponent implements OnInit{
 
 
   Eliminar(id:number){
-    this.productoService.Eliminarproducto(`https://localhost:7141/api/producto/${this.producto.id}`);
+    this.productoService.Eliminarproducto(`https://roberth-huchim-proyecto.onrender.com/api/producto/${this.producto.id}`);
     
   }
 }

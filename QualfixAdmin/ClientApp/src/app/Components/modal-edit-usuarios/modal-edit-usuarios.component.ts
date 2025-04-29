@@ -71,7 +71,7 @@ export class ModalEditUsuariosComponent implements OnInit {
   ngOnInit(): void {}
 
   obtenerusuario() {
-    this.usuarioService.getusuario(`https://localhost:7141/api/usuario/${this.usuario.id}`).subscribe(Response => {
+    this.usuarioService.getusuario(`https://roberth-huchim-proyecto.onrender.com/api/usuario/${this.usuario.id}`).subscribe(Response => {
       this.usuarioForm.patchValue(Response);
     });
   }
@@ -96,7 +96,7 @@ export class ModalEditUsuariosComponent implements OnInit {
   onSubmit() {
     if (this.usuarioForm.valid) {
       const usuarioData = this.usuarioForm.value;
-      this.usuarioService.EditarUsuario(`https://localhost:7141/api/usuario/${usuarioData.id}`, usuarioData);
+      this.usuarioService.EditarUsuario(`https://roberth-huchim-proyecto.onrender.com/api/usuario/${usuarioData.id}`, usuarioData);
       this.dialogRef.close();
       console.log(usuarioData);
     } else {

@@ -44,7 +44,7 @@ export class ModalEditProductosComponent implements OnInit {
    
   }
   obtenerProducto() {
-    this.productoService.getProducto(`https://localhost:7141/api/producto/${this.producto.id}`).subscribe(Response => {
+    this.productoService.getProducto(`https://roberth-huchim-proyecto.onrender.com/api/producto/${this.producto.id}`).subscribe(Response => {
  
     this.form.patchValue(Response);
       
@@ -53,7 +53,7 @@ export class ModalEditProductosComponent implements OnInit {
   public onSubmit(){
     if (this.form.valid) {
       const productoData = this.form.value;
-      this.productoService.Editarproducto(`https://localhost:7141/api/producto/${this.producto.id}`, productoData);
+      this.productoService.Editarproducto(`https://roberth-huchim-proyecto.onrender.com/api/producto/${this.producto.id}`, productoData);
       this.dialogRef.close();
        
       console.log(productoData);
