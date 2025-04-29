@@ -22,10 +22,14 @@ COPY QualfixAdmin.ioc/QualfixAdmin.ioc.csproj QualfixAdmin.ioc/
 # Restaurar
 RUN dotnet restore QualfixAdmin/QualfixAdmin.csproj
 
-# Copiar el resto del código
+# Copiar todo el resto del código
 COPY . .
 
-# Publicar
+# Instalar dependencias de Angular
+WORKDIR /src/QualfixAdmin/ClientApp    # <-- donde está tu package.json
+RUN npm install
+
+# Volver a la carpeta del backend y publicar
 WORKDIR /src/QualfixAdmin
 RUN dotnet publish -c Release -o /app/publish
 
