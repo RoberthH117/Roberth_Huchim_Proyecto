@@ -20,7 +20,7 @@ namespace QualfixAdmin_ioc
         {
             services.AddDbContext<QualfixAdminContext>(options =>
             {
-                options.UseNpgsql(configuration.GetConnectionString("cadenaSQL"));
+                options.UseNpgsql(configuration.GetConnectionString(Environment.GetEnvironmentVariable("CADENA_SQL")));
                  
             });
         }
@@ -29,7 +29,7 @@ namespace QualfixAdmin_ioc
         {
             services.AddDbContext<QualfixAdminSecurityContext>(options =>
             {
-                options.UseNpgsql(configuration.GetConnectionString("SeguridadQualfixAdmin"));
+                options.UseNpgsql(configuration.GetConnectionString(Environment.GetEnvironmentVariable("CADENA_SQL")));
                       
             });
         }

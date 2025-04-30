@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 //using QualfixAdmin.DataModel.Crear_Rol;
 using QualfixAdmin.model;
@@ -50,11 +51,11 @@ namespace QualfixAdmin.dal.DBContext
         //public DbSet<Company> Company { get; set; }
 
         //public DbSet<CrearRol> CrearRol { get; set; }
-
+       
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Server=ep-weathered-recipe-a4w1p2qs-pooler.us-east-1.aws.neon.tech;Database=Qualfix;Username=neondb_owner;Password=npg_zbNni4ceBQv7;Ssl Mode=Require;Trust Server Certificate=true;");
+        => optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("CADENA_SQL"));
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

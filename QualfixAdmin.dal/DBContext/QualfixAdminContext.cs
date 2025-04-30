@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using QualfixAdmin.model.QualfixAdminData;
 using System.Reflection;
 using QualfixAdmin.model;
+using Microsoft.Extensions.Configuration;
 
 namespace QualfixAdmin.dal.DBContext
 {
@@ -30,9 +31,11 @@ namespace QualfixAdmin.dal.DBContext
 
         public virtual DbSet<Imagen> Imagen { get; set; }
 
+       
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=ep-weathered-recipe-a4w1p2qs-pooler.us-east-1.aws.neon.tech;Port=5432;Database=Qualfix;Username=neondb_owner;Password=npg_zbNni4ceBQv7;Ssl Mode=Require;Trust Server Certificate=true;");
+        => optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("CADENA_SQL"));
 
         public virtual DbSet<Estado> Estados { get; set; }
 
