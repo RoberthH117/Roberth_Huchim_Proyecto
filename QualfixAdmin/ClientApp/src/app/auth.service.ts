@@ -17,9 +17,9 @@ export class AuthService implements CanActivate{
     return this.apiservice.GetComprobation().pipe(
       catchError((error) => {
         // En caso de error al comprobar la autenticación, redirige al inicio de sesión.
-        // this.router.navigate(['/login']);
+        this.router.navigate(['/login']);
         console.log(error);
-        return of(true);
+        return of(false);
       })
     );
   }
