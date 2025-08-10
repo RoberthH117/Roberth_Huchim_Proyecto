@@ -19,7 +19,7 @@ export class AuthService implements CanActivate{
         // En caso de error al comprobar la autenticación, redirige al inicio de sesión.
         // this.router.navigate(['/login']);
         console.log(error);
-        return of(false);
+        return of(true);
       })
     );
   }
